@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/SocialMediaCard.git/static/css/main.a617e044.chunk.css",
+    "main.js": "/SocialMediaCard.git/static/js/main.11dc9d0d.chunk.js",
+    "main.js.map": "/SocialMediaCard.git/static/js/main.11dc9d0d.chunk.js.map",
+    "runtime-main.js": "/SocialMediaCard.git/static/js/runtime-main.cc8b2d53.js",
+    "runtime-main.js.map": "/SocialMediaCard.git/static/js/runtime-main.cc8b2d53.js.map",
+    "static/css/2.4d0c25b9.chunk.css": "/SocialMediaCard.git/static/css/2.4d0c25b9.chunk.css",
+    "static/js/2.39f9b8cd.chunk.js": "/SocialMediaCard.git/static/js/2.39f9b8cd.chunk.js",
+    "static/js/2.39f9b8cd.chunk.js.map": "/SocialMediaCard.git/static/js/2.39f9b8cd.chunk.js.map",
+    "index.html": "/SocialMediaCard.git/index.html",
+    "static/css/2.4d0c25b9.chunk.css.map": "/SocialMediaCard.git/static/css/2.4d0c25b9.chunk.css.map",
+    "static/css/main.a617e044.chunk.css.map": "/SocialMediaCard.git/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.39f9b8cd.chunk.js.LICENSE.txt": "/SocialMediaCard.git/static/js/2.39f9b8cd.chunk.js.LICENSE.txt",
+    "static/media/americanProfile.3d8ad1a0.jpg": "/SocialMediaCard.git/static/media/americanProfile.3d8ad1a0.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc8b2d53.js",
+    "static/css/2.4d0c25b9.chunk.css",
+    "static/js/2.39f9b8cd.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.11dc9d0d.chunk.js"
+  ]
+}
