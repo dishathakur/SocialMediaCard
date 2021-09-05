@@ -125,7 +125,7 @@ const SocialMediaCard = () => {
     return (
         <>
             <Container>
-                <Row>
+                <Row >
                     {
                         data.map((post, index) => {
                             return (

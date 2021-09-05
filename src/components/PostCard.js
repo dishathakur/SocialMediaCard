@@ -7,20 +7,14 @@ import { faThumbsUp, faHeart, faSmile, faCommentAlt } from '@fortawesome/free-re
 import AddComment from './AddComment';
 import { useEffect, useState } from 'react';
 import Comments from './Comments';
+import User from './User';
+import './PostCard.css';
 
 const PostCard = ({ postData, like, love, comment, commentData }) => {
     const [showAddComment, setShowAddComment] = useState(false)
-
+    const [showAllComments, setShowAllComments] = useState(false)
     const [showComment, setShowComment] = useState([])
-
-
-    // const fetchComments = (id) => {
-    //     setShowAddComment(!showAddComment)
-    //     const data = commentData(id)
-    //     data.then(d =>
-    //         setShowComment(d)
-    //     )
-    // }
+    const [userDetails, setUserDetails] = useState([])
 
     const toggleComments = (id) => {
         setShowAddComment(!showAddComment)
@@ -35,19 +29,35 @@ const PostCard = ({ postData, like, love, comment, commentData }) => {
         console.log(showComment);
     }
 
+    const fetchPostUser = async (id) => {
+        const res = await fetch(`http://localhost:5000/users?postId=${id}`)
+        const user = await res.json()
+
+        setUserDetails(user)
+
+        // return user;
+    }
+
     useEffect(() => {
-        // const getComments = async() => {
-        //     const commentsFromServer = await fetchPostComments()
-        // }
-    }, [showComment]);
+        fetchPostComments(postData.id)
+        fetchPostUser(postData.id)
+    }, []);
 
 
     return (
-        <Card style={{ width: '18rem' }} key={postData.id}>
+        <Card style={{ width: '18rem', marginBottom: '20px', marginTop: '20px' }} key={postData.id}>
+            <Card.Header>
+                {userDetails.map(user => {
+                    console.log('hey', user['name']);
+                    return (
+                        <User name={user['name']} />
+                    )
+                })}
+            </Card.Header>
             <Card.Img variant="top" src={img} />
             <Card.Body>
                 <Card.Title>Description</Card.Title>
-                <Card.Text>
+                <Card.Text className="description">
                     {postData.post_description}
                 </Card.Text>
                 <span style={{ marginRight: '20px' }}>{postData.like}<FontAwesomeIcon icon={faThumbsUp} onClick={() => like(postData.id)} /></span>
@@ -57,12 +67,15 @@ const PostCard = ({ postData, like, love, comment, commentData }) => {
                 {showAddComment &&
                     <>
                         <AddComment AddComment={comment} postID={postData.id} showComment={toggleComments} />
-                        <Comments comments={showComment} />
+                        <Card style={{ marginTop: '20px' }}>
+                            {showComment.length !== 0 &&
+                                <Card.Header style={{ float: 'left' }} onClick={() => setShowAllComments(!showAllComments)}>
+                                    {showAllComments ? 'All Commments' : 'Show Comments'}  ({showComment.length}):</Card.Header>}
+                            {showAllComments && <div style={{ overflow: 'auto', height: '120px' }}><Comments comments={showComment} /></div>}
+                        </Card>
                     </>
                 }
-
             </Card.Body>
-
         </Card>
     )
 }
