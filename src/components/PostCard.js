@@ -1,16 +1,14 @@
 import Card from 'react-bootstrap/Card';
-// image
-import img from './../assets/images/americanProfile.jpg';
 // icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp, faHeart, faSmile, faCommentAlt } from '@fortawesome/free-regular-svg-icons'
+import { faThumbsUp, faHeart, faCommentAlt, faLaughSquint } from '@fortawesome/free-regular-svg-icons'
 import AddComment from './AddComment';
 import { useEffect, useState } from 'react';
 import Comments from './Comments';
 import User from './User';
 import './PostCard.css';
 
-const PostCard = ({ postData, like, love, comment, commentData }) => {
+const PostCard = ({ postData, like, love, comment, laugh, commentData }) => {
     const [showAddComment, setShowAddComment] = useState(false)
     const [showAllComments, setShowAllComments] = useState(false)
     const [showComment, setShowComment] = useState([])
@@ -54,7 +52,7 @@ const PostCard = ({ postData, like, love, comment, commentData }) => {
                     )
                 })}
             </Card.Header>
-            <Card.Img variant="top" src={img} />
+            <Card.Img variant="top" src={require('../assets/images/letter.jpg').default} />
             <Card.Body>
                 <Card.Title>Description</Card.Title>
                 <Card.Text className="description">
@@ -62,7 +60,7 @@ const PostCard = ({ postData, like, love, comment, commentData }) => {
                 </Card.Text>
                 <span style={{ marginRight: '20px' }}>{postData.like}<FontAwesomeIcon icon={faThumbsUp} onClick={() => like(postData.id)} /></span>
                 <span style={{ marginRight: '20px' }}>{postData.love}<FontAwesomeIcon icon={faHeart} onClick={() => love(postData.id)} /></span>
-                <span style={{ marginRight: '20px' }}>{postData.laugh}<FontAwesomeIcon icon={faSmile} /></span>
+                <span style={{ marginRight: '20px' }}>{postData.laugh}<FontAwesomeIcon icon={faLaughSquint} onClick={() => laugh(postData.id)} /></span>
                 <span style={{ marginRight: '20px' }}><FontAwesomeIcon icon={faCommentAlt} onClick={() => toggleComments(postData.id)} /></span>
                 {showAddComment &&
                     <>

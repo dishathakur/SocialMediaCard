@@ -4,7 +4,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const SocialMediaCard = () => {
     const [data, setData] = useState([]);
-
     const [commenttext, setCommenttext] = useState([]);
 
     useEffect(() => {
@@ -100,6 +99,29 @@ const SocialMediaCard = () => {
         );
     }
 
+    const laughHandler = async (id) => {
+        const postToLaugh = await fetchPost(id)
+        const laughPost = { ...postToLaugh, laugh: postToLaugh.laugh + 1 }
+
+        const res = await fetch(`http://localhost:5000/posts/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(laughPost)
+        })
+
+        const postDB = await res.json()
+
+        setData(
+            data.map((post) => {
+                return (
+                    post.id === id ? { ...post, laugh: postDB.laugh } : post
+                );
+            })
+        );
+    }
+
     const AddComment = async (text) => {
         const res = await fetch('http://localhost:5000/comments', {
             method: 'POST',
@@ -130,7 +152,7 @@ const SocialMediaCard = () => {
                         data.map((post, index) => {
                             return (
                                 <Col>
-                                    <PostCard key={index} postData={post} like={likeHandler} love={loveHandler} comment={AddComment} commentData={fetchPostComments}
+                                    <PostCard key={index} postData={post} like={likeHandler} love={loveHandler} laugh={laughHandler} comment={AddComment} commentData={fetchPostComments}
                                     />
                                 </Col>
                             )

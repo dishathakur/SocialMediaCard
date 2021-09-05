@@ -4,16 +4,16 @@
       "id": 1,
       "user_id": 1,
       "post_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non velit mollis, dapibus arcu eu, tempus turpis. Suspendisse sollicitudin blandit odio in posuere. Etiam sed mauris dapibus, vehicula lorem vitae, aliquet nisi.",
-      "image_url": "require('../images/americanProfile.jpg')",
+      "image_url": "../assets/images/game.jpg",
       "like": 4,
-      "love": 2,
-      "laugh": 0
+      "love": 1,
+      "laugh": 1
     },
     {
       "id": 2,
       "user_id": 2,
       "post_description": "Etiam eu malesuada justo, id congue quam. Donec sem quam, dictum et orci a, malesuada aliquet turpis. Vestibulum eleifend nec nunc convallis convallis. In lorem quam, elementum eu ante vitae, malesuada hendrerit quam.",
-      "image_url": "require('../images/americanProfile.jpg')",
+      "image_url": "../assets/images/letter.jpg",
       "like": 5,
       "love": 1,
       "laugh": 0
@@ -22,7 +22,7 @@
       "id": 3,
       "user_id": 3,
       "post_description": "Mauris aliquet suscipit magna, a ultricies magna condimentum eget. Donec mollis justo nec fringilla consectetur.",
-      "image_url": "require('../images/americanProfile.jpg')",
+      "image_url": "../assets/images/nature.jpg",
       "like": 0,
       "love": 0,
       "laugh": 0
@@ -31,7 +31,7 @@
       "id": 4,
       "user_id": 4,
       "post_description": "Nulla vitae orci tortor. Integer vitae interdum sem, ut pellentesque sapien. Sed eleifend erat at hendrerit aliquet.",
-      "image_url": "require('../images/americanProfile.jpg')",
+      "image_url": "../assets/images/rainbow.jpg",
       "like": 0,
       "love": 0,
       "laugh": 0
@@ -40,7 +40,7 @@
       "id": 5,
       "user_id": 5,
       "post_description": "Mauris in metus id ex volutpat laoreet ac non augue. In molestie condimentum sapien, eget aliquam leo aliquet sed. Donec vulputate arcu eget eros egestas mollis.",
-      "image_url": "require('../images/americanProfile.jpg')",
+      "image_url": "../assets/images/food.jpg",
       "like": 0,
       "love": 0,
       "laugh": 0
@@ -49,7 +49,7 @@
       "id": 6,
       "user_id": 6,
       "post_description": "Pellentesque sit amet imperdiet lorem. In hac habitasse platea dictumst. Curabitur mattis euismod orci, sed sodales dui.",
-      "image_url": "require('../images/americanProfile.jpg')",
+      "image_url": "../assets/images/coding.jpg",
       "like": 0,
       "love": 0,
       "laugh": 0
@@ -58,7 +58,7 @@
       "id": 7,
       "user_id": 7,
       "post_description": "Quisque egestas risus eu orci ullamcorper feugiat. Suspendisse non mauris cursus, vulputate ipsum id, suscipit magna.",
-      "image_url": "require('../images/americanProfile.jpg')",
+      "image_url": "../assets/images/people.jpg",
       "like": 0,
       "love": 0,
       "laugh": 0
@@ -67,7 +67,7 @@
       "id": 8,
       "user_id": 8,
       "post_description": "Vivamus eget molestie justo. Integer lobortis iaculis lorem, eget posuere nulla convallis nec. Nunc dapibus varius auctor.",
-      "image_url": "require('../images/americanProfile.jpg')",
+      "image_url": "../assets/images/smiley.jpg",
       "like": 0,
       "love": 0,
       "laugh": 0
