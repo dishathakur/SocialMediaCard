@@ -18,8 +18,14 @@ const AddComment = ({ AddComment, postID, showComment }) => {
 
     return (
         <form onSubmit={onSubmit}>
-            <input type="text" placeholder="Add Comment..." value={comment} onChange={e => setComment(e.target.value)} />
-            <input type="submit" placeholder="Save Comment" />
+            <input
+                type="text"
+                placeholder="Add Comment..."
+                value={comment}
+                onChange={e => setComment(e.target.value)} />
+            <input
+                type="submit"
+                placeholder="Save Comment" />
         </form>
     )
 }

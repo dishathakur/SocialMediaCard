@@ -1,6 +1,8 @@
-import PostCard from './PostCard';
 import { useState, useEffect } from 'react';
+// bootstrap
 import { Col, Container, Row } from 'react-bootstrap';
+//components
+import PostCard from './PostCard';
 
 const SocialMediaCard = () => {
     const [data, setData] = useState([]);
@@ -53,6 +55,7 @@ const SocialMediaCard = () => {
         return comment;
     }
 
+    // like post functionality
     const likeHandler = async (id) => {
         const postToLike = await fetchPost(id)
         const likePost = { ...postToLike, like: postToLike.like + 1 }
@@ -76,6 +79,7 @@ const SocialMediaCard = () => {
         );
     }
 
+    // love post functionality
     const loveHandler = async (id) => {
         const postToLove = await fetchPost(id)
         const lovePost = { ...postToLove, love: postToLove.love + 1 }
@@ -99,6 +103,7 @@ const SocialMediaCard = () => {
         );
     }
 
+    // laugh post functionality
     const laughHandler = async (id) => {
         const postToLaugh = await fetchPost(id)
         const laughPost = { ...postToLaugh, laugh: postToLaugh.laugh + 1 }
@@ -122,6 +127,7 @@ const SocialMediaCard = () => {
         );
     }
 
+    // Add comment to post
     const AddComment = async (text) => {
         const res = await fetch('http://localhost:5000/comments', {
             method: 'POST',
@@ -134,15 +140,7 @@ const SocialMediaCard = () => {
         const data = await res.json()
 
         setCommenttext([...commenttext, data])
-
-        // const id = 2
-        // const newComment = { id, ...text }
-        // setCommenttext([...commenttext, newComment])
     }
-
-    // useEffect(() => {
-    //     // action on update of movies
-    // }, [commenttext]);
 
     return (
         <>
@@ -152,7 +150,13 @@ const SocialMediaCard = () => {
                         data.map((post, index) => {
                             return (
                                 <Col>
-                                    <PostCard key={index} postData={post} like={likeHandler} love={loveHandler} laugh={laughHandler} comment={AddComment} commentData={fetchPostComments}
+                                    <PostCard
+                                        key={index}
+                                        postData={post}
+                                        like={likeHandler}
+                                        love={loveHandler}
+                                        laugh={laughHandler}
+                                        comment={AddComment}
                                     />
                                 </Col>
                             )
